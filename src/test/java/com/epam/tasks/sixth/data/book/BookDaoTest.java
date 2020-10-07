@@ -1,5 +1,6 @@
 package com.epam.tasks.sixth.data.book;
 
+import com.epam.tasks.sixth.data.book.repos.MockBookRepo;
 import com.epam.tasks.sixth.data.exceptions.BookAlreadyExistsException;
 import com.epam.tasks.sixth.data.exceptions.BookDeletionException;
 import com.epam.tasks.sixth.data.exceptions.UnknownBookSpecificationException;
@@ -18,7 +19,7 @@ public class BookDaoTest {
     private static final String TEST_AUTHOR_2 = "TestAuthor";
     private static final String TEST_BOOK_TITLE = "TestBookTitle";
     private static final String TEST_BOOK_TITLE_2 = "TestBookTitle2";
-    private final BookDao dao = new BookDao();
+    private final BookDao dao = new BookDao(new MockBookRepo());
 
     @Test
     public void testAddBookShouldAddBook() throws BookAlreadyExistsException {

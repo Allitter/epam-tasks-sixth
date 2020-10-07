@@ -12,6 +12,7 @@ package com.epam.tasks.sixth;
 //   -sortBooksByTag (отсортировать список книг по заданному критерию).
 
 import com.epam.tasks.sixth.data.book.BookDao;
+import com.epam.tasks.sixth.data.book.repos.MockBookRepo;
 import com.epam.tasks.sixth.model.Book;
 import com.epam.tasks.sixth.model.BookTag;
 import org.apache.logging.log4j.LogManager;
@@ -23,7 +24,7 @@ public class Main {
 
     public static void main(String[] args) {
         try {
-            BookDao dao = new BookDao();
+            BookDao dao = new BookDao(new MockBookRepo());
             Book toAdd = new Book(7, "Джек Лондон", "Игра", "рассказ");
             LOGGER.info("trying to add book" + toAdd);
             dao.addBook(toAdd);

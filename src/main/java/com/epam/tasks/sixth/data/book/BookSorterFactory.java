@@ -1,6 +1,6 @@
 package com.epam.tasks.sixth.data.book;
 
-import com.epam.tasks.sixth.data.book.sorts.*;
+import com.epam.tasks.sixth.data.book.sorters.*;
 import com.epam.tasks.sixth.data.exceptions.UnknownBookSorterException;
 import com.epam.tasks.sixth.model.BookTag;
 

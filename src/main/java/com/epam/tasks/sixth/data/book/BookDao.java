@@ -1,8 +1,7 @@
 package com.epam.tasks.sixth.data.book;
 
 import com.epam.tasks.sixth.data.book.repos.BookRepository;
-import com.epam.tasks.sixth.data.book.repos.MockBookRepo;
-import com.epam.tasks.sixth.data.book.sorts.BookSorter;
+import com.epam.tasks.sixth.data.book.sorters.BookSorter;
 import com.epam.tasks.sixth.data.book.specifications.AllBookSpecification;
 import com.epam.tasks.sixth.data.book.specifications.BookSpecification;
 import com.epam.tasks.sixth.data.exceptions.BookAlreadyExistsException;
@@ -18,11 +17,14 @@ import java.util.List;
 
 public class BookDao {
     private static final Logger LOGGER = LogManager.getLogger(BookDao.class);
-    private final BookRepository bookRepository = new MockBookRepo();
+    private final BookRepository bookRepository;
     private final BookSorterFactory sorterFactory = new BookSorterFactory();
     private final BookSpecificationFactory specificationFactory
             = new BookSpecificationFactory();
 
+    public BookDao(final BookRepository bookRepository) {
+        this.bookRepository = bookRepository;
+    }
 
     public void addBook(Book book) throws BookAlreadyExistsException {
         bookRepository.addBook(book);

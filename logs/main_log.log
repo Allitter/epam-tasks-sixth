@@ -1,21 +1,23 @@
-[INFO ] 2020-10-07 18:06:49.106 [main] com.epam.tasks.sixth.Main - trying to add bookBook{id=7, author='Джек Лондон', title='Игра', genre='рассказ'}
-[INFO ] 2020-10-07 18:06:49.108 [main] tasks.sixth.data.book.BookDao - book Book{id=7, author='Джек Лондон', title='Игра', genre='рассказ'} was added to repository
-[INFO ] 2020-10-07 18:06:49.108 [main] com.epam.tasks.sixth.Main - trying to find books with genre "рассказ"
-[INFO ] 2020-10-07 18:06:49.109 [main] tasks.sixth.data.book.BookDao - creating GENRE specification
-[INFO ] 2020-10-07 18:06:49.111 [main] tasks.sixth.data.book.BookDao - searching books
-[DEBUG] 2020-10-07 18:06:49.111 [main] com.epam.tasks.sixth.Main - found books
-[Book{id=3, author='Носов', title='Живая шляпа', genre='рассказ'}, Book{id=6, author='Джек Лондон', title='Любовь к жизни', genre='рассказ'}, Book{id=7, author='Джек Лондон', title='Игра', genre='рассказ'}]
-[INFO ] 2020-10-07 18:06:49.111 [main] com.epam.tasks.sixth.Main - trying to remove bookBook{id=7, author='Джек Лондон', title='Игра', genre='рассказ'}
-[INFO ] 2020-10-07 18:06:49.111 [main] tasks.sixth.data.book.BookDao - book Book{id=7, author='Джек Лондон', title='Игра', genre='рассказ'} was removed to repository
-[INFO ] 2020-10-07 18:06:49.111 [main] com.epam.tasks.sixth.Main - trying to sort books by AUTHOR
-[INFO ] 2020-10-07 18:06:49.111 [main] tasks.sixth.data.book.BookDao - creating AUTHOR sort
-[INFO ] 2020-10-07 18:06:49.113 [main] tasks.sixth.data.book.BookDao - sorting
-[INFO ] 2020-10-07 18:06:49.114 [main] tasks.sixth.data.book.BookDao - getting all books from repository
-[DEBUG] 2020-10-07 18:06:49.117 [main] com.epam.tasks.sixth.Main - sorted books:
-[Book{id=5, author='Джек Лондон', title='Белый Клык', genre='повесть'}, Book{id=6, author='Джек Лондон', title='Любовь к жизни', genre='рассказ'}, Book{id=1, author='Достоевский', title='Преступление и наказание', genre='роман'}, Book{id=4, author='Марк Твен', title='Приключения Тома Сойера', genre='роман'}, Book{id=3, author='Носов', title='Живая шляпа', genre='рассказ'}, Book{id=2, author='Толстой', title='Война и мир', genre='роман'}]
-[INFO ] 2020-10-07 18:06:49.117 [main] com.epam.tasks.sixth.Main - trying to remove bookBook{id=7, author='Джек Лондон', title='Игра', genre='рассказ'}
-[ERROR] 2020-10-07 18:06:49.118 [main] com.epam.tasks.sixth.Main - The book doesn't exist
-com.epam.tasks.sixth.data.exceptions.BookDeletionException: The book doesn't exist
-	at com.epam.tasks.sixth.data.book.repos.MockBookRepo.removeBook(MockBookRepo.java:36) ~[classes/:?]
-	at com.epam.tasks.sixth.data.book.BookDao.removeBook(BookDao.java:33) ~[classes/:?]
-	at com.epam.tasks.sixth.Main.main(Main.java:40) [classes/:?]
+[INFO ] 2020-10-07 18:17:41.149 [main] tasks.sixth.data.book.BookDao - book Book{id=100004, author='TestAuthor2', title='TestBookTitle', genre='TestGenre'} was added to repository
+[INFO ] 2020-10-07 18:17:41.153 [main] tasks.sixth.data.book.BookDao - book Book{id=100005, author='TestAuthor2', title='TestBookTitle2', genre='TestGenre2'} was added to repository
+[INFO ] 2020-10-07 18:17:41.154 [main] tasks.sixth.data.book.BookDao - creating AUTHOR specification
+[INFO ] 2020-10-07 18:17:41.155 [main] tasks.sixth.data.book.BookDao - searching books
+[INFO ] 2020-10-07 18:17:41.157 [main] tasks.sixth.data.book.BookDao - book Book{id=100008, author='TestAuthor2', title='TestBookTitle', genre='TestGenre'} was added to repository
+[INFO ] 2020-10-07 18:17:41.157 [main] tasks.sixth.data.book.BookDao - book Book{id=100009, author='TestAuthor', title='TestBookTitle2', genre='TestGenre'} was added to repository
+[INFO ] 2020-10-07 18:17:41.157 [main] tasks.sixth.data.book.BookDao - creating GENRE specification
+[INFO ] 2020-10-07 18:17:41.158 [main] tasks.sixth.data.book.BookDao - searching books
+[INFO ] 2020-10-07 18:17:41.158 [main] tasks.sixth.data.book.BookDao - book Book{id=100006, author='TestAuthor2', title='TestBookTitle', genre='TestGenre'} was added to repository
+[INFO ] 2020-10-07 18:17:41.158 [main] tasks.sixth.data.book.BookDao - book Book{id=100007, author='TestAuthor', title='TestBookTitle', genre='TestGenre2'} was added to repository
+[INFO ] 2020-10-07 18:17:41.158 [main] tasks.sixth.data.book.BookDao - creating TITLE specification
+[INFO ] 2020-10-07 18:17:41.159 [main] tasks.sixth.data.book.BookDao - searching books
+[INFO ] 2020-10-07 18:17:41.160 [main] tasks.sixth.data.book.BookDao - book Book{id=100010, author='TestAuthor2', title='TestBookTitle', genre='TestGenre'} was added to repository
+[INFO ] 2020-10-07 18:17:41.160 [main] tasks.sixth.data.book.BookDao - creating ID specification
+[INFO ] 2020-10-07 18:17:41.161 [main] tasks.sixth.data.book.BookDao - searching books
+[INFO ] 2020-10-07 18:17:41.161 [main] tasks.sixth.data.book.BookDao - getting all books from repository
+[INFO ] 2020-10-07 18:17:41.162 [main] tasks.sixth.data.book.BookDao - book Book{id=100001, author='TestAuthor2', title='TestBookTitle', genre='TestGenre'} was added to repository
+[INFO ] 2020-10-07 18:17:41.162 [main] tasks.sixth.data.book.BookDao - getting all books from repository
+[INFO ] 2020-10-07 18:17:41.162 [main] tasks.sixth.data.book.BookDao - book Book{id=100001, author='TestAuthor2', title='TestBookTitle', genre='TestGenre'} was added to repository
+[INFO ] 2020-10-07 18:17:41.163 [main] tasks.sixth.data.book.BookDao - getting all books from repository
+[INFO ] 2020-10-07 18:17:41.163 [main] tasks.sixth.data.book.BookDao - book Book{id=100002, author='Джек Лондон', title='Игра', genre='рассказ'} was added to repository
+[INFO ] 2020-10-07 18:17:41.163 [main] tasks.sixth.data.book.BookDao - book Book{id=100002, author='Джек Лондон', title='Игра', genre='рассказ'} was removed to repository
+[INFO ] 2020-10-07 18:17:41.163 [main] tasks.sixth.data.book.BookDao - getting all books from repository
