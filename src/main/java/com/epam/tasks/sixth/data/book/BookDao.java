@@ -1,13 +1,10 @@
 package com.epam.tasks.sixth.data.book;
 
-import com.epam.tasks.sixth.data.book.repos.BookRepository;
-import com.epam.tasks.sixth.data.book.sorters.BookSorter;
-import com.epam.tasks.sixth.data.book.specifications.AllBookSpecification;
-import com.epam.tasks.sixth.data.book.specifications.BookSpecification;
-import com.epam.tasks.sixth.data.exceptions.BookAlreadyExistsException;
-import com.epam.tasks.sixth.data.exceptions.BookDeletionException;
-import com.epam.tasks.sixth.data.exceptions.UnknownBookSorterException;
-import com.epam.tasks.sixth.data.exceptions.UnknownBookSpecificationException;
+import com.epam.tasks.sixth.data.book.repository.BookRepository;
+import com.epam.tasks.sixth.data.book.sorter.BookSorter;
+import com.epam.tasks.sixth.data.book.specification.AllBookSpecification;
+import com.epam.tasks.sixth.data.book.specification.BookSpecification;
+import com.epam.tasks.sixth.data.DataException;
 import com.epam.tasks.sixth.model.Book;
 import com.epam.tasks.sixth.model.BookTag;
 import org.apache.logging.log4j.LogManager;
@@ -26,40 +23,36 @@ public class BookDao {
         this.bookRepository = bookRepository;
     }
 
-    public void addBook(Book book) throws BookAlreadyExistsException {
+    public void addBook(Book book) throws DataException {
         bookRepository.addBook(book);
         LOGGER.info(String.format("book %s was added to repository", book));
     }
 
-    public void removeBook(Book book) throws BookDeletionException {
+    public void removeBook(Book book) throws DataException {
         bookRepository.removeBook(book);
         LOGGER.info(String.format("book %s was removed to repository", book));
     }
 
     public List<Book> findByTag(BookTag tag, String value)
-            throws UnknownBookSpecificationException {
+            throws DataException {
 
         LOGGER.info(String.format("creating %s specification", tag));
         BookSpecification specification = specificationFactory.create(tag, value);
         LOGGER.info("searching books");
-        List<Book> result = bookRepository.query(specification);
-        return result;
+        return bookRepository.query(specification);
     }
 
     public List<Book> getAllBooks() {
         BookSpecification specification = new AllBookSpecification();
         LOGGER.info("getting all books from repository");
-        List<Book> result = bookRepository.query(specification);
-        return result;
+        return bookRepository.query(specification);
     }
 
-    public List<Book> sortBooksByTag(BookTag tag)
-            throws UnknownBookSorterException {
+    public List<Book> sortBooksByTag(BookTag tag) throws DataException {
 
         LOGGER.info(String.format("creating %s sort", tag));
         BookSorter sorter = sorterFactory.create(tag);
         LOGGER.info("sorting");
-        List<Book> result = sorter.sort(getAllBooks());
-        return result;
+        return sorter.sort(getAllBooks());
     }
 }

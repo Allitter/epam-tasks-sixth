@@ -1,9 +1,7 @@
-package com.epam.tasks.sixth.data.book.repos;
+package com.epam.tasks.sixth.data.book.repository;
 
-import com.epam.tasks.sixth.data.book.specifications.BookSpecification;
-import com.epam.tasks.sixth.data.exceptions.BookAlreadyExistsException;
-import com.epam.tasks.sixth.data.exceptions.BookDeletionException;
-import com.epam.tasks.sixth.data.exceptions.BookUpdateException;
+import com.epam.tasks.sixth.data.book.specification.BookSpecification;
+import com.epam.tasks.sixth.data.DataException;
 import com.epam.tasks.sixth.model.Book;
 import java.util.LinkedList;
 import java.util.List;
@@ -21,25 +19,25 @@ public class MockBookRepo implements BookRepository {
         books.add(new Book(6, "Джек Лондон", "Любовь к жизни", "рассказ"));
     }
 
-    public void addBook(Book book) throws BookAlreadyExistsException {
+    public void addBook(Book book) throws DataException {
         if (!books.contains(book)){
             books.add(book);
         } else {
-            throw new BookAlreadyExistsException();
+            throw new DataException("The book already exists");
         }
     }
 
-    public void removeBook(Book book) throws BookDeletionException {
+    public void removeBook(Book book) throws DataException {
         if (books.contains(book)) {
             books.remove(book);
         } else {
-            throw new BookDeletionException("The book doesn't exist");
+            throw new DataException("The book doesn't exist");
         }
     }
 
-    public void updateBook(Book book) throws BookUpdateException {
+    public void updateBook(Book book) throws DataException {
         if (!books.contains(book)) {
-            throw new BookUpdateException("The book doesn't exist");
+            throw new DataException("The book doesn't exist");
         }
 
         int index = books.indexOf(book);

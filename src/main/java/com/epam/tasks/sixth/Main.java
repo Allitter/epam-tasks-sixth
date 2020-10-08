@@ -12,7 +12,7 @@ package com.epam.tasks.sixth;
 //   -sortBooksByTag (отсортировать список книг по заданному критерию).
 
 import com.epam.tasks.sixth.data.book.BookDao;
-import com.epam.tasks.sixth.data.book.repos.MockBookRepo;
+import com.epam.tasks.sixth.data.book.repository.MockBookRepo;
 import com.epam.tasks.sixth.model.Book;
 import com.epam.tasks.sixth.model.BookTag;
 import org.apache.logging.log4j.LogManager;
@@ -25,20 +25,25 @@ public class Main {
     public static void main(String[] args) {
         try {
             BookDao dao = new BookDao(new MockBookRepo());
-            Book toAdd = new Book(7, "Джек Лондон", "Игра", "рассказ");
-            LOGGER.info("trying to add book" + toAdd);
-            dao.addBook(toAdd);
+            Book book = new Book(7, "Джек Лондон", "Игра", "рассказ");
+
+            LOGGER.info("trying to add book" + book);
+            dao.addBook(book);
+
             LOGGER.info("trying to find books with genre \"рассказ\"");
             List<Book> foundBooks = dao.findByTag(BookTag.GENRE, "рассказ");
             LOGGER.debug("found books\n" + foundBooks);
-            LOGGER.info("trying to remove book" + toAdd);
-            dao.removeBook(toAdd);
+
+            LOGGER.info("trying to remove book" + book);
+            dao.removeBook(book);
+
             BookTag tag  = BookTag.AUTHOR;
             LOGGER.info("trying to sort books by " + tag.name());
             List<Book> sortedBooks = dao.sortBooksByTag(tag);
             LOGGER.debug("sorted books:\n" + sortedBooks);
-            LOGGER.info("trying to remove book" + toAdd);
-            dao.removeBook(toAdd);
+
+            LOGGER.info("trying to remove book" + book);
+            dao.removeBook(book);                 // removing not existing book
         } catch (Exception e) {
             LOGGER.error(e.getMessage(), e);
         }

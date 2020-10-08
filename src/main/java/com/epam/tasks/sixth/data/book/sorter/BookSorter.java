@@ -1,4 +1,4 @@
-package com.epam.tasks.sixth.data.book.sorters;
+package com.epam.tasks.sixth.data.book.sorter;
 
 import com.epam.tasks.sixth.model.Book;
 import java.util.List;

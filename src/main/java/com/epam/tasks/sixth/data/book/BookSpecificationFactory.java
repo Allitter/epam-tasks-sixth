@@ -1,12 +1,12 @@
 package com.epam.tasks.sixth.data.book;
 
-import com.epam.tasks.sixth.data.book.specifications.*;
-import com.epam.tasks.sixth.data.exceptions.UnknownBookSpecificationException;
+import com.epam.tasks.sixth.data.book.specification.*;
+import com.epam.tasks.sixth.data.DataException;
 import com.epam.tasks.sixth.model.BookTag;
 
 public class BookSpecificationFactory {
     public BookSpecification create(BookTag tag, String value)
-            throws UnknownBookSpecificationException {
+            throws DataException {
 
         BookSpecification toReturn;
 
@@ -24,7 +24,7 @@ public class BookSpecificationFactory {
                 toReturn = new AuthorBookSpecification(value);
                 break;
             default:
-                throw new UnknownBookSpecificationException(
+                throw new DataException(
                         tag.name() + " specification doesn't exist");
         }
 

@@ -1,9 +1,7 @@
 package com.epam.tasks.sixth.data.book;
 
-import com.epam.tasks.sixth.data.book.repos.MockBookRepo;
-import com.epam.tasks.sixth.data.exceptions.BookAlreadyExistsException;
-import com.epam.tasks.sixth.data.exceptions.BookDeletionException;
-import com.epam.tasks.sixth.data.exceptions.UnknownBookSpecificationException;
+import com.epam.tasks.sixth.data.book.repository.MockBookRepo;
+import com.epam.tasks.sixth.data.DataException;
 import com.epam.tasks.sixth.model.Book;
 import com.epam.tasks.sixth.model.BookTag;
 import org.junit.Assert;
@@ -22,7 +20,7 @@ public class BookDaoTest {
     private final BookDao dao = new BookDao(new MockBookRepo());
 
     @Test
-    public void testAddBookShouldAddBook() throws BookAlreadyExistsException {
+    public void testAddBookShouldAddBook() throws DataException {
         Book toAdd = new Book(100001, TEST_AUTHOR, TEST_BOOK_TITLE, TEST_GENRE);
         List<Book> expected = dao.getAllBooks();
         expected.add(toAdd);
@@ -33,8 +31,8 @@ public class BookDaoTest {
         Assert.assertEquals(expected, actual);
     }
 
-    @Test(expected = BookAlreadyExistsException.class)
-    public void testAddBookShouldThrowException() throws BookAlreadyExistsException {
+    @Test(expected = DataException.class)
+    public void testAddBookShouldThrowException() throws DataException {
         Book toAdd = new Book(100001, TEST_AUTHOR, TEST_BOOK_TITLE, TEST_GENRE);
 
         dao.addBook(toAdd);
@@ -42,7 +40,7 @@ public class BookDaoTest {
     }
 
     @Test
-    public void testRemoveBookShouldRemoveBook() throws BookDeletionException, BookAlreadyExistsException {
+    public void testRemoveBookShouldRemoveBook() throws DataException {
         Book book = new Book(100002, "Джек Лондон", "Игра", "рассказ");
         List<Book> expected = dao.getAllBooks();
         dao.addBook(book);
@@ -53,16 +51,15 @@ public class BookDaoTest {
         Assert.assertEquals(expected, actual);
     }
 
-    @Test(expected = BookDeletionException.class)
-    public void testRemoveBookShouldThrowException() throws BookDeletionException {
+    @Test(expected = DataException.class)
+    public void testRemoveBookShouldThrowException() throws DataException {
         Book book = new Book(100003, "Джек Лондон", "Игра", "рассказ");
 
         dao.removeBook(book);
     }
 
     @Test
-    public void testFindByTagShouldFindBooksByAuthor()
-            throws BookAlreadyExistsException, UnknownBookSpecificationException {
+    public void testFindByTagShouldFindBooksByAuthor() throws DataException {
 
         List<Book> expected = new LinkedList<>();
         Book book1 = new Book(100004, TEST_AUTHOR, TEST_BOOK_TITLE, TEST_GENRE);
@@ -78,8 +75,7 @@ public class BookDaoTest {
     }
 
     @Test
-    public void testFindByTagShouldFindBooksByTitle()
-            throws BookAlreadyExistsException, UnknownBookSpecificationException {
+    public void testFindByTagShouldFindBooksByTitle() throws DataException {
 
         List<Book> expected = new LinkedList<>();
         Book book1 = new Book(100006, TEST_AUTHOR, TEST_BOOK_TITLE, TEST_GENRE);
@@ -95,8 +91,7 @@ public class BookDaoTest {
     }
 
     @Test
-    public void testFindByTagShouldFindBooksByGenre()
-            throws BookAlreadyExistsException, UnknownBookSpecificationException {
+    public void testFindByTagShouldFindBooksByGenre() throws DataException {
 
         List<Book> expected = new LinkedList<>();
         Book book1 = new Book(100008, TEST_AUTHOR, TEST_BOOK_TITLE, TEST_GENRE);
@@ -112,8 +107,7 @@ public class BookDaoTest {
     }
 
     @Test
-    public void testFindByTagShouldFindBooksById()
-            throws BookAlreadyExistsException, UnknownBookSpecificationException {
+    public void testFindByTagShouldFindBooksById() throws DataException {
 
         List<Book> expected = new LinkedList<>();
         Book book1 = new Book(100010, TEST_AUTHOR, TEST_BOOK_TITLE, TEST_GENRE);
