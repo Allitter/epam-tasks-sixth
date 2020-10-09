@@ -1,19 +1,15 @@
 package com.epam.task.sixth.data.book.impl.dao;
 
 import com.epam.task.sixth.data.DataException;
-import com.epam.task.sixth.data.book.BookSorter;
-import com.epam.task.sixth.data.book.BookSorterFactory;
-import com.epam.task.sixth.data.book.BookSpecificationFactory;
+import com.epam.task.sixth.data.book.*;
 import com.epam.task.sixth.data.book.impl.specification.AllBookSpecification;
 import com.epam.task.sixth.model.BookTag;
-import com.epam.task.sixth.data.book.BookSpecification;
-import com.epam.task.sixth.data.book.BookRepository;
 import com.epam.task.sixth.model.Book;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import java.util.List;
 
-public class BookDaoImpl {
+public class BookDaoImpl implements BookDao {
     private static final Logger LOGGER = LogManager.getLogger(BookDaoImpl.class);
     private final BookRepository bookRepository;
     private final BookSorterFactory sorterFactory = new BookSorterFactory();

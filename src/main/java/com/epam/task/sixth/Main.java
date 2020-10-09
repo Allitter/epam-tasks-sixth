@@ -1,5 +1,6 @@
 package com.epam.task.sixth;
 
+import com.epam.task.sixth.data.book.BookDao;
 import com.epam.task.sixth.data.book.impl.dao.BookDaoImpl;
 import com.epam.task.sixth.data.book.impl.repository.MockBookRepository;
 import com.epam.task.sixth.model.BookTag;
@@ -13,7 +14,7 @@ public class Main {
 
     public static void main(String[] args) {
         try {
-            BookDaoImpl dao = new BookDaoImpl(new MockBookRepository());
+            BookDao dao = new BookDaoImpl(new MockBookRepository());
             Book book = new Book(7, "Джек Лондон", "Игра", "рассказ");
 
             LOGGER.info("trying to add book" + book);
