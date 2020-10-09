@@ -8,7 +8,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class BookRepositoryStub implements BookRepository {
-    List<Book> books = new LinkedList<>();
+    private final List<Book> books = new LinkedList<>();
 
     public void addBook(Book book) throws DataException {
         if (!books.contains(book)){
