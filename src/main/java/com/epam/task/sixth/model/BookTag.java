@@ -1,4 +1,4 @@
-package com.epam.tasks.sixth.model;
+package com.epam.task.sixth.model;
 
 public enum BookTag {
     ID,

@@ -1,4 +1,4 @@
-package com.epam.tasks.sixth;
+package com.epam.task.sixth;
 
 // TODO Разработать класс Book с 4-5 полями. Для выполнения основных операций со
 //  списком книг, которые хранятся в некотором хранилище разработать класс
@@ -11,10 +11,10 @@ package com.epam.tasks.sixth;
 //      Specification - List<Book> find(value)  (e.g. TitleSpecification )
 //   -sortBooksByTag (отсортировать список книг по заданному критерию).
 
-import com.epam.tasks.sixth.data.book.BookDao;
-import com.epam.tasks.sixth.data.book.repository.MockBookRepo;
-import com.epam.tasks.sixth.model.Book;
-import com.epam.tasks.sixth.model.BookTag;
+import com.epam.task.sixth.data.book.impl.dao.BookDaoImpl;
+import com.epam.task.sixth.data.book.impl.repository.MockBookRepository;
+import com.epam.task.sixth.model.BookTag;
+import com.epam.task.sixth.model.Book;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import java.util.List;
@@ -24,7 +24,7 @@ public class Main {
 
     public static void main(String[] args) {
         try {
-            BookDao dao = new BookDao(new MockBookRepo());
+            BookDaoImpl dao = new BookDaoImpl(new MockBookRepository());
             Book book = new Book(7, "Джек Лондон", "Игра", "рассказ");
 
             LOGGER.info("trying to add book" + book);

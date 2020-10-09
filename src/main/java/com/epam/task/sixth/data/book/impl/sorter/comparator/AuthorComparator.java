@@ -1,7 +1,6 @@
-package com.epam.tasks.sixth.data.book.sorter.comparator;
+package com.epam.task.sixth.data.book.impl.sorter.comparator;
 
-import com.epam.tasks.sixth.model.Book;
-
+import com.epam.task.sixth.model.Book;
 import java.util.Comparator;
 
 public class AuthorComparator implements Comparator<Book> {

@@ -1,14 +1,13 @@
-package com.epam.tasks.sixth.data.book;
+package com.epam.task.sixth.data.book;
 
-import com.epam.tasks.sixth.data.book.sorter.*;
-import com.epam.tasks.sixth.data.DataException;
-import com.epam.tasks.sixth.data.book.sorter.comparator.AuthorComparator;
-import com.epam.tasks.sixth.data.book.sorter.comparator.GenreComparator;
-import com.epam.tasks.sixth.data.book.sorter.comparator.IdComparator;
-import com.epam.tasks.sixth.data.book.sorter.comparator.TitleComparator;
-import com.epam.tasks.sixth.model.Book;
-import com.epam.tasks.sixth.model.BookTag;
-
+import com.epam.task.sixth.data.DataException;
+import com.epam.task.sixth.data.book.impl.sorter.BookSorterImpl;
+import com.epam.task.sixth.data.book.impl.sorter.comparator.AuthorComparator;
+import com.epam.task.sixth.data.book.impl.sorter.comparator.GenreComparator;
+import com.epam.task.sixth.data.book.impl.sorter.comparator.IdComparator;
+import com.epam.task.sixth.data.book.impl.sorter.comparator.TitleComparator;
+import com.epam.task.sixth.model.Book;
+import com.epam.task.sixth.model.BookTag;
 import java.util.Comparator;
 
 public class BookSorterFactory {

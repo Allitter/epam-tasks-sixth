@@ -1,6 +1,7 @@
-package com.epam.tasks.sixth.data.book.specification;
+package com.epam.task.sixth.data.book.impl.specification;
 
-import com.epam.tasks.sixth.model.Book;
+import com.epam.task.sixth.data.book.BookSpecification;
+import com.epam.task.sixth.model.Book;
 
 public class TitleBookSpecification implements BookSpecification {
     private final String title;

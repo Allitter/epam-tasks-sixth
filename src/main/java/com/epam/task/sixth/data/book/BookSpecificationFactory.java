@@ -1,8 +1,11 @@
-package com.epam.tasks.sixth.data.book;
+package com.epam.task.sixth.data.book;
 
-import com.epam.tasks.sixth.data.book.specification.*;
-import com.epam.tasks.sixth.data.DataException;
-import com.epam.tasks.sixth.model.BookTag;
+import com.epam.task.sixth.data.DataException;
+import com.epam.task.sixth.model.BookTag;
+import com.epam.task.sixth.data.book.impl.specification.AuthorBookSpecification;
+import com.epam.task.sixth.data.book.impl.specification.GenreBookSpecification;
+import com.epam.task.sixth.data.book.impl.specification.IdBookSpecification;
+import com.epam.task.sixth.data.book.impl.specification.TitleBookSpecification;
 
 public class BookSpecificationFactory {
     public BookSpecification create(BookTag tag, String value)

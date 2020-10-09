@@ -1,4 +1,4 @@
-package com.epam.tasks.sixth.data;
+package com.epam.task.sixth.data;
 
 public class DataException extends Exception {
     public DataException() {
