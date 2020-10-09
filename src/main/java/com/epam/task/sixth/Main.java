@@ -1,16 +1,5 @@
 package com.epam.task.sixth;
 
-// TODO Разработать класс Book с 4-5 полями. Для выполнения основных операций со
-//  списком книг, которые хранятся в некотором хранилище разработать класс
-//  BookDao с функциональностью:
-//   -addBook (добавить книгу в хранилище в случае, если такой книги нет, в
-//      противном случае выбросить исключение);
-//   -removeBook (удалить книгу, если она есть, в противном случае выбросить
-//      исключение);
-//   -findByTag(найти книгу по заданному критерию); (enum name, String value)
-//      Specification - List<Book> find(value)  (e.g. TitleSpecification )
-//   -sortBooksByTag (отсортировать список книг по заданному критерию).
-
 import com.epam.task.sixth.data.book.impl.dao.BookDaoImpl;
 import com.epam.task.sixth.data.book.impl.repository.MockBookRepository;
 import com.epam.task.sixth.model.BookTag;
