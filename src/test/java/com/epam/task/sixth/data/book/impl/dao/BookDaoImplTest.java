@@ -1,34 +1,30 @@
-package com.epam.tasks.sixth.data.book;
+package com.epam.task.sixth.data.book.impl.dao;
 
-import com.epam.tasks.sixth.data.book.repository.MockBookRepo;
-import com.epam.tasks.sixth.data.DataException;
-import com.epam.tasks.sixth.model.Book;
-import com.epam.tasks.sixth.model.BookTag;
+import com.epam.task.sixth.data.DataException;
+import com.epam.task.sixth.model.Book;
+import com.epam.task.sixth.model.BookTag;
 import org.junit.Assert;
 import org.junit.Test;
-
 import java.util.LinkedList;
 import java.util.List;
 
-public class BookDaoTest {
+public class BookDaoImplTest {
     private static final String TEST_GENRE = "TestGenre";
     private static final String TEST_GENRE_2 = "TestGenre2";
     private static final String TEST_AUTHOR = "TestAuthor2";
     private static final String TEST_AUTHOR_2 = "TestAuthor";
     private static final String TEST_BOOK_TITLE = "TestBookTitle";
     private static final String TEST_BOOK_TITLE_2 = "TestBookTitle2";
-    private final BookDao dao = new BookDao(new MockBookRepo());
+    private final BookRepositoryStub stubRepository = new BookRepositoryStub();
+    private final BookDaoImpl dao = new BookDaoImpl(stubRepository);
 
     @Test
     public void testAddBookShouldAddBook() throws DataException {
         Book toAdd = new Book(100001, TEST_AUTHOR, TEST_BOOK_TITLE, TEST_GENRE);
-        List<Book> expected = dao.getAllBooks();
-        expected.add(toAdd);
 
         dao.addBook(toAdd);
-        List<Book> actual = dao.getAllBooks();
 
-        Assert.assertEquals(expected, actual);
+        Assert.assertTrue(stubRepository.contains(toAdd));
     }
 
     @Test(expected = DataException.class)
@@ -41,26 +37,23 @@ public class BookDaoTest {
 
     @Test
     public void testRemoveBookShouldRemoveBook() throws DataException {
-        Book book = new Book(100002, "Джек Лондон", "Игра", "рассказ");
-        List<Book> expected = dao.getAllBooks();
+        Book book = new Book(100002, TEST_AUTHOR, TEST_BOOK_TITLE, TEST_GENRE);
         dao.addBook(book);
 
         dao.removeBook(book);
-        List<Book> actual = dao.getAllBooks();
 
-        Assert.assertEquals(expected, actual);
+        Assert.assertFalse(stubRepository.contains(book));
     }
 
     @Test(expected = DataException.class)
     public void testRemoveBookShouldThrowException() throws DataException {
-        Book book = new Book(100003, "Джек Лондон", "Игра", "рассказ");
+        Book book = new Book(100003, TEST_AUTHOR, TEST_BOOK_TITLE, TEST_GENRE);
 
         dao.removeBook(book);
     }
 
     @Test
     public void testFindByTagShouldFindBooksByAuthor() throws DataException {
-
         List<Book> expected = new LinkedList<>();
         Book book1 = new Book(100004, TEST_AUTHOR, TEST_BOOK_TITLE, TEST_GENRE);
         Book book2 = new Book(100005, TEST_AUTHOR, TEST_BOOK_TITLE_2, TEST_GENRE_2);
@@ -76,7 +69,6 @@ public class BookDaoTest {
 
     @Test
     public void testFindByTagShouldFindBooksByTitle() throws DataException {
-
         List<Book> expected = new LinkedList<>();
         Book book1 = new Book(100006, TEST_AUTHOR, TEST_BOOK_TITLE, TEST_GENRE);
         Book book2 = new Book(100007, TEST_AUTHOR_2, TEST_BOOK_TITLE, TEST_GENRE_2);
@@ -92,7 +84,6 @@ public class BookDaoTest {
 
     @Test
     public void testFindByTagShouldFindBooksByGenre() throws DataException {
-
         List<Book> expected = new LinkedList<>();
         Book book1 = new Book(100008, TEST_AUTHOR, TEST_BOOK_TITLE, TEST_GENRE);
         Book book2 = new Book(100009, TEST_AUTHOR_2, TEST_BOOK_TITLE_2, TEST_GENRE);
@@ -108,7 +99,6 @@ public class BookDaoTest {
 
     @Test
     public void testFindByTagShouldFindBooksById() throws DataException {
-
         List<Book> expected = new LinkedList<>();
         Book book1 = new Book(100010, TEST_AUTHOR, TEST_BOOK_TITLE, TEST_GENRE);
         expected.add(book1);
