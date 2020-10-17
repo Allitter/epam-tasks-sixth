@@ -7,7 +7,7 @@ import com.epam.task.sixth.model.Book;
 import java.util.LinkedList;
 import java.util.List;
 
-public class BookRepositoryStub implements BookRepository {
+public class BookRepositoryMock implements BookRepository {
     private final List<Book> books = new LinkedList<>();
 
     public void addBook(Book book) throws DataException {

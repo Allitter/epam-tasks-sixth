@@ -8,8 +8,6 @@ import org.junit.Test;
 import java.util.LinkedList;
 import java.util.List;
 
-// TODO replace repo with mock
-
 public class BookDaoImplTest {
     private static final String TEST_GENRE = "TestGenre";
     private static final String TEST_GENRE_2 = "TestGenre2";
@@ -17,8 +15,8 @@ public class BookDaoImplTest {
     private static final String TEST_AUTHOR_2 = "TestAuthor";
     private static final String TEST_BOOK_TITLE = "TestBookTitle";
     private static final String TEST_BOOK_TITLE_2 = "TestBookTitle2";
-    private final BookRepositoryStub stubRepository = new BookRepositoryStub();
-    private final BookDaoImpl dao = new BookDaoImpl(stubRepository);
+    private final BookRepositoryMock mockRepository = new BookRepositoryMock();
+    private final BookDaoImpl dao = new BookDaoImpl(mockRepository);
 
     @Test
     public void testAddBookShouldAddBook() throws DataException {
@@ -26,7 +24,7 @@ public class BookDaoImplTest {
 
         dao.addBook(toAdd);
 
-        Assert.assertTrue(stubRepository.contains(toAdd));
+        Assert.assertTrue(mockRepository.contains(toAdd));
     }
 
     @Test(expected = DataException.class)
@@ -44,7 +42,7 @@ public class BookDaoImplTest {
 
         dao.removeBook(book);
 
-        Assert.assertFalse(stubRepository.contains(book));
+        Assert.assertFalse(mockRepository.contains(book));
     }
 
     @Test(expected = DataException.class)
