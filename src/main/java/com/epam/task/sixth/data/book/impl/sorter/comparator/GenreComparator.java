@@ -6,9 +6,9 @@ import java.util.Comparator;
 
 public class GenreComparator implements Comparator<Book> {
     @Override
-    public int compare(Book o1, Book o2) {
-        String genre1 = o1.getGenre();
-        String genre2 = o2.getGenre();
-        return genre1.compareTo(genre2);
+    public int compare(Book firstBook, Book secondBook) {
+        String firstBookGenre = firstBook.getGenre();
+        String secondBookGenre = secondBook.getGenre();
+        return firstBookGenre.compareTo(secondBookGenre);
     }
 }

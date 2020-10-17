@@ -8,6 +8,8 @@ import org.junit.Test;
 import java.util.LinkedList;
 import java.util.List;
 
+// TODO replace repo with mock
+
 public class BookDaoImplTest {
     private static final String TEST_GENRE = "TestGenre";
     private static final String TEST_GENRE_2 = "TestGenre2";

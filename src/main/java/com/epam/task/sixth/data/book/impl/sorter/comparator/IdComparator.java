@@ -6,7 +6,9 @@ import java.util.Comparator;
 
 public class IdComparator implements Comparator<Book> {
     @Override
-    public int compare(Book o1, Book o2) {
-        return Integer.compare(o1.getId(), o2.getId());
+    public int compare(Book firstBook, Book secondBook) {
+        int firstBookId = firstBook.getId();
+        int secondBookId = secondBook.getId();
+        return Integer.compare(firstBookId, secondBookId);
     }
 }

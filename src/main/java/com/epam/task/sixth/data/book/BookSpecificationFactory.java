@@ -8,8 +8,7 @@ import com.epam.task.sixth.data.book.impl.specification.IdBookSpecification;
 import com.epam.task.sixth.data.book.impl.specification.TitleBookSpecification;
 
 public class BookSpecificationFactory {
-    public BookSpecification create(BookTag tag, String value)
-            throws DataException {
+    public BookSpecification create(BookTag tag, String value) throws DataException {
         if (value == null) {
             throw new DataException("Incorrect value for book specification");
         }
