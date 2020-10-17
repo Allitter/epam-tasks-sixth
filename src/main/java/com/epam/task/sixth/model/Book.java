@@ -6,9 +6,9 @@ public class Book {
     private final int id;
     private final String author;
     private final String title;
-    private final String genre;
+    private final BookGenre genre;
 
-    public Book(int id, String author, String title, String genre) {
+    public Book(int id, String author, String title, BookGenre genre) {
         this.id = id;
         this.author = author;
         this.title = title;
@@ -27,7 +27,7 @@ public class Book {
         return title;
     }
 
-    public String getGenre() {
+    public BookGenre getGenre() {
         return genre;
     }
 

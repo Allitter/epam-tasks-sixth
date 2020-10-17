@@ -1,6 +1,7 @@
 package com.epam.task.sixth.data.book.impl.specification;
 
 import com.epam.task.sixth.model.Book;
+import com.epam.task.sixth.model.BookGenre;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -10,7 +11,7 @@ public class AllBookSpecificationTest {
 
     @Test
     public void testSpecifiedShouldReturnTrueForAnyBook() {
-        Book book = new Book(1, "text", "text", "text");
+        Book book = new Book(1, "text", "text", BookGenre.STORY);
 
         Assert.assertTrue(specification.specified(book));
     }

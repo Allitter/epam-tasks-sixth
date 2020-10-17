@@ -4,6 +4,8 @@ import com.epam.task.sixth.data.DataException;
 import com.epam.task.sixth.data.book.BookSpecification;
 import com.epam.task.sixth.data.book.BookRepository;
 import com.epam.task.sixth.model.Book;
+import com.epam.task.sixth.model.BookGenre;
+
 import java.util.LinkedList;
 import java.util.List;
 
@@ -12,12 +14,12 @@ public class MockBookRepository implements BookRepository {
 
     public MockBookRepository() {
         books = new LinkedList<>();
-        books.add(new Book(1, "Достоевский", "Преступление и наказание", "роман"));
-        books.add(new Book(2, "Толстой", "Война и мир", "роман"));
-        books.add(new Book(3, "Носов", "Живая шляпа", "рассказ"));
-        books.add(new Book(4, "Марк Твен", "Приключения Тома Сойера", "роман"));
-        books.add(new Book(5, "Джек Лондон", "Белый Клык", "повесть"));
-        books.add(new Book(6, "Джек Лондон", "Любовь к жизни", "рассказ"));
+        books.add(new Book(1, "Достоевский", "Преступление и наказание", BookGenre.STORY));
+        books.add(new Book(2, "Толстой", "Война и мир", BookGenre.NOVEL));
+        books.add(new Book(3, "Носов", "Живая шляпа", BookGenre.STORY));
+        books.add(new Book(4, "Марк Твен", "Приключения Тома Сойера", BookGenre.NOVEL));
+        books.add(new Book(5, "Джек Лондон", "Белый Клык", BookGenre.TALE));
+        books.add(new Book(6, "Джек Лондон", "Любовь к жизни", BookGenre.STORY));
     }
 
     public void addBook(Book book) throws DataException {

@@ -1,12 +1,13 @@
 package com.epam.task.sixth.data.book.impl.sorter.comparator;
 
 import com.epam.task.sixth.model.Book;
+import com.epam.task.sixth.model.BookGenre;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class GenreComparatorTest {
-    private static final String GENRE_1 = "Genre1";
-    private static final String GENRE_2 = "Genre2";
+    private static final BookGenre GENRE_1 = BookGenre.STORY;
+    private static final BookGenre GENRE_2 = BookGenre.STORY;
     private final GenreComparator comparator = new GenreComparator();
 
     @Test

@@ -1,6 +1,7 @@
 package com.epam.task.sixth.data.book.impl.specification;
 
 import com.epam.task.sixth.model.Book;
+import com.epam.task.sixth.model.BookGenre;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -11,15 +12,15 @@ public class IdBookSpecificationTest {
             new IdBookSpecification(String.valueOf(ID_1));
 
     @Test
-    public void testSpecifiedShouldReturnTrueForProperId() {
-        Book book = new Book(ID_1, "author", "title", "genre");
+    public void testSpecifiedShouldReturnTrueWhenIdMatches() {
+        Book book = new Book(ID_1, "author", "title", BookGenre.STORY);
 
         Assert.assertTrue(specification.specified(book));
     }
 
     @Test
     public void testSpecifiedShouldReturnFalseWhenIdNotMatches() {
-        Book book = new Book(ID_2, "author", "title", "genre");
+        Book book = new Book(ID_2, "author", "title", BookGenre.STORY);
 
         Assert.assertFalse(specification.specified(book));
     }
