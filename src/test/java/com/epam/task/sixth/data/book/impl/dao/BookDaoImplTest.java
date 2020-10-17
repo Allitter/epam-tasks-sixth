@@ -16,8 +16,7 @@ public class BookDaoImplTest {
     private static final String TEST_AUTHOR_2 = "TestAuthor";
     private static final String TEST_BOOK_TITLE = "TestBookTitle";
     private static final String TEST_BOOK_TITLE_2 = "TestBookTitle2";
-    private final BookRepositoryMock mockRepository = new BookRepositoryMock();
-    private final BookDaoImpl dao = new BookDaoImpl(mockRepository);
+    private final BookRepositoryMock stubRepository = new BookRepositoryMock();
 
     @Test
     public void testAddBookShouldAddBookWhenNotContainsAddingBook() throws DataException {
@@ -26,7 +25,7 @@ public class BookDaoImplTest {
 
         dao.addBook(toAdd);
 
-        Assert.assertTrue(mockRepository.contains(toAdd));
+        Assert.assertTrue(stubRepository.contains(toAdd));
     }
 
     @Test(expected = DataException.class)
@@ -46,7 +45,7 @@ public class BookDaoImplTest {
 
         dao.removeBook(book);
 
-        Assert.assertFalse(mockRepository.contains(book));
+        Assert.assertFalse(stubRepository.contains(book));
     }
 
     @Test(expected = DataException.class)

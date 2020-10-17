@@ -1,19 +1,19 @@
-[INFO ] 2020-10-17 14:34:48.577 [main] data.book.impl.dao.BookDaoImpl - book Book{id=100004, author='TestAuthor2', title='TestBookTitle', genre='NOVEL'} was added to repository
-[INFO ] 2020-10-17 14:34:48.582 [main] data.book.impl.dao.BookDaoImpl - book Book{id=100005, author='TestAuthor2', title='TestBookTitle2', genre='STORY'} was added to repository
-[INFO ] 2020-10-17 14:34:48.582 [main] data.book.impl.dao.BookDaoImpl - creating AUTHOR specification
-[INFO ] 2020-10-17 14:34:48.583 [main] data.book.impl.dao.BookDaoImpl - searching books
-[INFO ] 2020-10-17 14:34:48.587 [main] data.book.impl.dao.BookDaoImpl - book Book{id=100008, author='TestAuthor2', title='TestBookTitle', genre='NOVEL'} was added to repository
-[INFO ] 2020-10-17 14:34:48.587 [main] data.book.impl.dao.BookDaoImpl - book Book{id=100009, author='TestAuthor', title='TestBookTitle2', genre='NOVEL'} was added to repository
-[INFO ] 2020-10-17 14:34:48.587 [main] data.book.impl.dao.BookDaoImpl - creating GENRE specification
-[INFO ] 2020-10-17 14:34:48.588 [main] data.book.impl.dao.BookDaoImpl - searching books
-[INFO ] 2020-10-17 14:34:48.588 [main] data.book.impl.dao.BookDaoImpl - book Book{id=100006, author='TestAuthor2', title='TestBookTitle', genre='NOVEL'} was added to repository
-[INFO ] 2020-10-17 14:34:48.588 [main] data.book.impl.dao.BookDaoImpl - book Book{id=100007, author='TestAuthor', title='TestBookTitle', genre='STORY'} was added to repository
-[INFO ] 2020-10-17 14:34:48.588 [main] data.book.impl.dao.BookDaoImpl - creating TITLE specification
-[INFO ] 2020-10-17 14:34:48.588 [main] data.book.impl.dao.BookDaoImpl - searching books
-[INFO ] 2020-10-17 14:34:48.589 [main] data.book.impl.dao.BookDaoImpl - book Book{id=100010, author='TestAuthor2', title='TestBookTitle', genre='NOVEL'} was added to repository
-[INFO ] 2020-10-17 14:34:48.589 [main] data.book.impl.dao.BookDaoImpl - creating ID specification
-[INFO ] 2020-10-17 14:34:48.589 [main] data.book.impl.dao.BookDaoImpl - searching books
-[INFO ] 2020-10-17 14:34:48.589 [main] data.book.impl.dao.BookDaoImpl - book Book{id=100001, author='TestAuthor2', title='TestBookTitle', genre='NOVEL'} was added to repository
-[INFO ] 2020-10-17 14:34:48.591 [main] data.book.impl.dao.BookDaoImpl - book Book{id=100001, author='TestAuthor2', title='TestBookTitle', genre='NOVEL'} was added to repository
-[INFO ] 2020-10-17 14:34:48.592 [main] data.book.impl.dao.BookDaoImpl - book Book{id=100002, author='TestAuthor2', title='TestBookTitle', genre='NOVEL'} was added to repository
-[INFO ] 2020-10-17 14:34:48.592 [main] data.book.impl.dao.BookDaoImpl - book Book{id=100002, author='TestAuthor2', title='TestBookTitle', genre='NOVEL'} was removed to repository
+[INFO ] 2020-10-17 14:56:15.420 [main] data.book.impl.dao.BookDaoImpl - book Book{id=100006, author='TestAuthor2', title='TestBookTitle', genre='NOVEL'} was added to repository
+[INFO ] 2020-10-17 14:56:15.424 [main] data.book.impl.dao.BookDaoImpl - book Book{id=100007, author='TestAuthor', title='TestBookTitle', genre='STORY'} was added to repository
+[INFO ] 2020-10-17 14:56:15.426 [main] data.book.impl.dao.BookDaoImpl - creating TITLE specification
+[INFO ] 2020-10-17 14:56:15.426 [main] data.book.impl.dao.BookDaoImpl - searching books
+[INFO ] 2020-10-17 14:56:15.427 [main] data.book.impl.dao.BookDaoImpl - book Book{id=100001, author='TestAuthor2', title='TestBookTitle', genre='NOVEL'} was added to repository
+[INFO ] 2020-10-17 14:56:15.428 [main] data.book.impl.dao.BookDaoImpl - book Book{id=100002, author='TestAuthor2', title='TestBookTitle', genre='NOVEL'} was added to repository
+[INFO ] 2020-10-17 14:56:15.428 [main] data.book.impl.dao.BookDaoImpl - book Book{id=100002, author='TestAuthor2', title='TestBookTitle', genre='NOVEL'} was removed to repository
+[INFO ] 2020-10-17 14:56:15.429 [main] data.book.impl.dao.BookDaoImpl - book Book{id=100001, author='TestAuthor2', title='TestBookTitle', genre='NOVEL'} was added to repository
+[INFO ] 2020-10-17 14:56:15.429 [main] data.book.impl.dao.BookDaoImpl - book Book{id=100008, author='TestAuthor2', title='TestBookTitle', genre='NOVEL'} was added to repository
+[INFO ] 2020-10-17 14:56:15.429 [main] data.book.impl.dao.BookDaoImpl - book Book{id=100009, author='TestAuthor', title='TestBookTitle2', genre='NOVEL'} was added to repository
+[INFO ] 2020-10-17 14:56:15.429 [main] data.book.impl.dao.BookDaoImpl - creating GENRE specification
+[INFO ] 2020-10-17 14:56:15.429 [main] data.book.impl.dao.BookDaoImpl - searching books
+[INFO ] 2020-10-17 14:56:15.431 [main] data.book.impl.dao.BookDaoImpl - book Book{id=100004, author='TestAuthor2', title='TestBookTitle', genre='NOVEL'} was added to repository
+[INFO ] 2020-10-17 14:56:15.431 [main] data.book.impl.dao.BookDaoImpl - book Book{id=100005, author='TestAuthor2', title='TestBookTitle2', genre='STORY'} was added to repository
+[INFO ] 2020-10-17 14:56:15.432 [main] data.book.impl.dao.BookDaoImpl - creating AUTHOR specification
+[INFO ] 2020-10-17 14:56:15.432 [main] data.book.impl.dao.BookDaoImpl - searching books
+[INFO ] 2020-10-17 14:56:15.432 [main] data.book.impl.dao.BookDaoImpl - book Book{id=100010, author='TestAuthor2', title='TestBookTitle', genre='NOVEL'} was added to repository
+[INFO ] 2020-10-17 14:56:15.432 [main] data.book.impl.dao.BookDaoImpl - creating ID specification
+[INFO ] 2020-10-17 14:56:15.432 [main] data.book.impl.dao.BookDaoImpl - searching books
