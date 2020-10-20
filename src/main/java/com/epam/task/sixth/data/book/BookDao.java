@@ -14,6 +14,4 @@ public interface BookDao {
     List<Book> findByTag(BookTag tag, String value) throws DataException;
 
     List<Book> sortBooksByTag(BookTag tag) throws DataException;
-
-    List<Book> getAllBooks();
 }

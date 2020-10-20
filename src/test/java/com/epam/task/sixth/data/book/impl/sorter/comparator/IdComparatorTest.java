@@ -8,16 +8,16 @@ import org.junit.Test;
 public class IdComparatorTest {
     private static final int ID_1 = 1;
     private static final int ID_2 = 2;
-    private final IdComparator comparator = new IdComparator();
+    private static final Book FIRST_BOOK = new Book(ID_1, "author", "title", BookGenre.STORY);
+    private static final Book SECOND_BOOK = new Book(ID_2, "author", "title", BookGenre.STORY);
 
     @Test
     public void testCompareShouldCompareId() {
-        Book book1 = new Book(ID_1, "author", "title", BookGenre.STORY);
-        Book book2 = new Book(ID_2, "author", "title", BookGenre.STORY);
-        int expected = Integer.compare(ID_1, ID_2);
+        IdComparator comparator = new IdComparator();
 
-        int actual = comparator.compare(book1, book2);
+        int actual = comparator.compare(FIRST_BOOK, SECOND_BOOK);
 
+        int expected = -1;
         Assert.assertEquals(expected, actual);
     }
 }

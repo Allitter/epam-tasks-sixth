@@ -4,24 +4,24 @@ import com.epam.task.sixth.model.Book;
 import com.epam.task.sixth.model.BookGenre;
 import org.junit.Assert;
 import org.junit.Test;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class AuthorBookSpecificationTest {
-    private static final String AUTHOR_1 = "Author1";
-    private static final String AUTHOR_2 = "Author2";
-    private final AuthorBookSpecification specification =
-            new AuthorBookSpecification(AUTHOR_1);
+    private static final String FIRST_AUTHOR = "Author1";
+    private static final String SECOND_AUTHOR = "Author2";
+    private static final Book FIRST_BOOK = new Book(1, FIRST_AUTHOR, "title", BookGenre.STORY);
+    private static final Book SECOND_BOOK = new Book(2, SECOND_AUTHOR, "title", BookGenre.STORY);
 
     @Test
-    public void testSpecifiedShouldReturnTrueWhenAuthorMatches() {
-        Book book = new Book(1, AUTHOR_1, "title", BookGenre.STORY);
+    public void testSpecifiedShouldReturnSpecifiedBooksWhenAuthorMatches() {
+        AuthorBookSpecification specification = new AuthorBookSpecification(FIRST_AUTHOR);
+        List<Book> books = Arrays.asList(FIRST_BOOK, SECOND_BOOK);
 
-        Assert.assertTrue(specification.specified(book));
-    }
+        List<Book> actual = specification.find(books);
 
-    @Test
-    public void testSpecifiedShouldReturnFalseWhenAuthorNotMatches() {
-        Book book = new Book(1, AUTHOR_2, "title", BookGenre.STORY);
-
-        Assert.assertFalse(specification.specified(book));
+        List<Book> expected = Collections.singletonList(FIRST_BOOK);
+        Assert.assertEquals(expected, actual);
     }
 }

@@ -2,7 +2,6 @@ package com.epam.task.sixth;
 
 import com.epam.task.sixth.data.book.BookDao;
 import com.epam.task.sixth.data.book.impl.dao.BookDaoImpl;
-import com.epam.task.sixth.data.book.impl.repository.MockBookRepository;
 import com.epam.task.sixth.model.BookGenre;
 import com.epam.task.sixth.model.BookTag;
 import com.epam.task.sixth.model.Book;
@@ -15,7 +14,7 @@ public class Main {
 
     public static void main(String[] args) {
         try {
-            BookDao dao = new BookDaoImpl(new MockBookRepository());
+            BookDao dao = new BookDaoImpl();
             Book book = new Book(7, "Джек Лондон", "Игра", BookGenre.STORY);
 
             LOGGER.info("trying to add book" + book);
@@ -32,9 +31,6 @@ public class Main {
             LOGGER.info("trying to sort books by " + tag.name());
             List<Book> sortedBooks = dao.sortBooksByTag(tag);
             LOGGER.debug("sorted books:\n" + sortedBooks);
-
-            LOGGER.info("trying to remove book" + book);
-            dao.removeBook(book);                 // removing not existing book
         } catch (Exception e) {
             LOGGER.error(e.getMessage(), e);
         }

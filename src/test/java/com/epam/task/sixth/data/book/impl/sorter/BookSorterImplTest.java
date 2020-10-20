@@ -4,28 +4,23 @@ import com.epam.task.sixth.model.Book;
 import com.epam.task.sixth.model.BookGenre;
 import org.junit.Assert;
 import org.junit.Test;
-
+import java.util.Arrays;
 import java.util.Comparator;
-import java.util.LinkedList;
 import java.util.List;
 
 public class BookSorterImplTest {
-    private final Comparator<Book> comparator = new ComparatorMock();
-    private final BookSorterImpl sorter = new BookSorterImpl(comparator);
+    private static final Book FIRST_BOOK = new Book(1, "author1", "title", BookGenre.STORY);
+    private static final Book SECOND_BOOK = new Book(2, "author2", "title", BookGenre.STORY);
 
     @Test
     public void testSortShouldReturnListSortedByIdWhenNotEmpty() {
-        List<Book> books = new LinkedList<>();
-        Book book1 = new Book(1, "author1", "title", BookGenre.STORY);
-        Book book2 = new Book(2, "author2", "title", BookGenre.STORY);
-        List<Book> expected = new LinkedList<>();
-        expected.add(book1);
-        expected.add(book2);
-        books.add(book2);
-        books.add(book1);
+        Comparator<Book> comparator = new ComparatorMock();
+        BookSorterImpl sorter = new BookSorterImpl(comparator);
+        List<Book> books = Arrays.asList(SECOND_BOOK, FIRST_BOOK);
 
         List<Book> result = sorter.sort(books);
 
+        List<Book> expected = Arrays.asList(FIRST_BOOK, SECOND_BOOK);
         Assert.assertEquals(expected, result);
     }
 }

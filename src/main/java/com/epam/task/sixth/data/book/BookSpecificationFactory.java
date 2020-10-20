@@ -1,6 +1,5 @@
 package com.epam.task.sixth.data.book;
 
-import com.epam.task.sixth.data.DataException;
 import com.epam.task.sixth.model.BookTag;
 import com.epam.task.sixth.data.book.impl.specification.AuthorBookSpecification;
 import com.epam.task.sixth.data.book.impl.specification.GenreBookSpecification;
@@ -8,11 +7,7 @@ import com.epam.task.sixth.data.book.impl.specification.IdBookSpecification;
 import com.epam.task.sixth.data.book.impl.specification.TitleBookSpecification;
 
 public class BookSpecificationFactory {
-    public BookSpecification create(BookTag tag, String value) throws DataException {
-        if (value == null) {
-            throw new DataException("Incorrect value for book specification");
-        }
-
+    public BookSpecification create(BookTag tag, String value) {
         BookSpecification toReturn;
 
         switch (tag) {
@@ -29,7 +24,7 @@ public class BookSpecificationFactory {
                 toReturn = new AuthorBookSpecification(value);
                 break;
             default:
-                throw new DataException(
+                throw new IllegalArgumentException(
                         tag.name() + " specification doesn't exist");
         }
 

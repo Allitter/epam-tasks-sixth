@@ -4,16 +4,27 @@ import com.epam.task.sixth.data.book.BookSpecification;
 import com.epam.task.sixth.model.Book;
 import com.epam.task.sixth.model.BookGenre;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class GenreBookSpecification implements BookSpecification {
-    private final BookGenre genre;
+    private final BookGenre specifiedGenre;
 
     public GenreBookSpecification(String genre) {
         genre = genre.toUpperCase();
-        this.genre = BookGenre.valueOf(genre);
+        this.specifiedGenre = BookGenre.valueOf(genre);
     }
 
-    public boolean specified(Book book) {
-        BookGenre toCompare = book.getGenre();
-        return toCompare.equals(genre);
+    @Override
+    public List<Book> find(List<Book> books) {
+        List<Book> result = new ArrayList<>();
+        BookGenre genre;
+        for (Book book : books) {
+            genre = book.getGenre();
+            if (genre.equals(specifiedGenre)) {
+                result.add(book);
+            }
+        }
+        return result;
     }
 }
